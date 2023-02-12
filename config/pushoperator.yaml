@@ -1,0 +1,7 @@
+apiVersion: vitalbh.io/v1
+kind: PushOperator
+metadata:
+  name: push-operator
+  namespace: vitalns 
+spec:
+  filter: ""

@@ -1,0 +1,16 @@
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: vitalns
+  name: hello-word
+  annotations:
+        pushoperators.vitalbh.io/http: "https://www.mywebhook.com"
+spec:
+  template:
+    spec:  
+      restartPolicy: Never
+      containers:
+      - name: hello
+        image: library/hello-world
+      restartPolicy: Never

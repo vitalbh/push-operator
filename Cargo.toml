@@ -1,0 +1,25 @@
+[package]
+name = "push-operator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.25.0", features = ["macros", "rt-multi-thread", "signal"] } # Macros for easy project setup and testing, multi-threaded runtime for best utilization of resources
+kube = { version = "0.78.0", default-features = true, features = ["derive", "runtime"] } # Library for talking to Kubernetes API
+kube-derive = "0.78.0" # Support for Custom Resource Definitions
+kube-runtime = "0.78.0" # Custom controller support
+k8s-openapi = { version = "~0.17", default-features = false, features = ["api", "v1_23"] } # Kube-rs depends on k8s-openapi
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "~1.0"
+futures = "~0.3"
+# All serde dependencies are used to serialize/deserialize CRDs and other Kubernetes-related structs
+serde = "1.0.152"
+serde_json = "1.0.93"
+serde_yaml = "0.9.17"
+schemars = "~0.8"
+thiserror = "~1.0" # Custom Error definitions and convenient error mappings
+tracing-subscriber = "0.3.1"
+log = "0.4.14"
+tracing = "0.1.29"
