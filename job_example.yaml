@@ -5,7 +5,9 @@ metadata:
   namespace: vitalns
   name: hello-word
   annotations:
-        pushoperators.vitalbh.io/http: "https://www.mywebhook.com"
+    pushoperators.vitalbh.io/http: "https://webhook.site/767e984a-04d7-4279-934e-02fda1669421"
+  labels:
+    vital: ok
 spec:
   template:
     spec:  
